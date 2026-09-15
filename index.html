@@ -1,157 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Estoque - POO</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 650px;
-            background-color: #ffffffff;
-            margin: 30px auto;
-            padding: 25px;
-            border-radius: 8px;
-            box-sizing: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #1e293b;
-        }
-
-        /* Formulário*/
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #2563eb;
-        }
-
-        /* Botões*/
-        button {
-            padding: 10px 15px;
-            font-size: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color;
-        }
-
-        .btn-primary {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-        }
-
-        .btn-danger {
-            background-color: #dc2626;
-            color: white;
-        }
-
-        .btn-danger:hover {
-            background-color: #b91c1c;
-        }
-
-        /* Resumo / Painel */
-        .resumo-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-top: 15px;
-            border-top: 2px solid #e2e8f0;
-        }
-
-        #total-estoque {
-            font-size: 18px;
-            color: #0f172a;
-        }
-
-        /* Tabela */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th,
-        td {
-            border: 1px solid #cbd5e1;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-
-        /* Botão de remoção individual dentro da tabela */
-        .btn-remover {
-            background-color: #ef4444;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-        }
-
-        .btn-remover:hover {
-            background-color: #dc2626;
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="container">
         <h1>Cadastro de Produtos</h1>
 
-        <!--Formulário de Entrada-->
+        <!-- Formulário de Entrada -->
         <form id="produto-form">
             <div class="form-group">
                 <label for="nome">Nome do produto:</label>
@@ -159,25 +18,25 @@
             </div>
 
             <div class="form-group">
-                <label for="nome">Preço (R$):</label>
+                <label for="preco">Preço (R$):</label>
                 <input type="number" id="preco" step="0.01" placeholder="Ex. 3500.00" required />
             </div>
 
             <div class="form-group">
-                <label for="nome">Quantidade:</label>
+                <label for="quantidade">Quantidade:</label>
                 <input type="number" id="quantidade" placeholder="Ex. 5" required />
             </div>
 
             <button type="submit" class="btn-primary">Adicionar Produto</button>
         </form>
 
-        <!--Cabeçalho de Ações e Resumo-->
+        <!-- Cabeçalho de Ações e Resumo -->
         <div class="resumo-container">
-            <h3 id="total-estoque">Total em Estoque: R$0,00</h3>
-            <button id="limpar-tabela" class="btn-danger">Limpar</button>
+            <h3 id="total-estoque">Total em Estoque: R$ 0,00</h3>
+            <button id="limpar-tabela" class="btn-danger">Limpar Tudo</button>
         </div>
 
-        <!--Tabela de Exibição-->
+        <!-- Tabela de Exibição -->
         <table id="tabela-produtos">
             <thead>
                 <tr>
@@ -189,14 +48,11 @@
                 </tr>
             </thead>
             <tbody>
-                <!--As linhas da tabela serão inseridas através do Js-->
+                <!-- As linhas da tabela serão inseridas através do JS -->
             </tbody>
         </table>
     </div>
 
     <script src="script.js"></script>
- 
-
 </body>
-
 </html>
